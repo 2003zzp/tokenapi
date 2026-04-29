@@ -511,9 +511,9 @@ const LoginForm = () => {
             </Title>
           </div>
 
-          <Card className='border-0 !rounded-2xl overflow-hidden'>
+          <Card className='border-0 !rounded-2xl overflow-hidden shadow-xl'>
             <div className='flex justify-center pt-6 pb-2'>
-              <Title heading={3} className='text-gray-800 dark:text-gray-200'>
+              <Title heading={3} className='text-semi-color-text-0 dark:text-gray-200'>
                 {t('登 录')}
               </Title>
             </div>
@@ -521,8 +521,8 @@ const LoginForm = () => {
               <div className='space-y-3'>
                 {status.wechat_login && (
                   <Button
-                    theme='outline'
-                    className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                    theme='light'
+                    className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
                     type='tertiary'
                     icon={
                       <Icon svg={<WeChatIcon />} style={{ color: '#07C160' }} />
@@ -536,8 +536,8 @@ const LoginForm = () => {
 
                 {status.github_oauth && (
                   <Button
-                    theme='outline'
-                    className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                    theme='light'
+                    className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200'
                     type='tertiary'
                     icon={<IconGithubLogo size='large' />}
                     onClick={handleGitHubClick}
@@ -550,8 +550,8 @@ const LoginForm = () => {
 
                 {status.discord_oauth && (
                   <Button
-                    theme='outline'
-                    className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                    theme='light'
+                    className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-200'
                     type='tertiary'
                     icon={
                       <SiDiscord
@@ -571,8 +571,8 @@ const LoginForm = () => {
 
                 {status.oidc_enabled && (
                   <Button
-                    theme='outline'
-                    className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                    theme='light'
+                    className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
                     type='tertiary'
                     icon={<OIDCIcon style={{ color: '#1877F2' }} />}
                     onClick={handleOIDCClick}
@@ -584,8 +584,8 @@ const LoginForm = () => {
 
                 {status.linuxdo_oauth && (
                   <Button
-                    theme='outline'
-                    className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                    theme='light'
+                    className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-all duration-200'
                     type='tertiary'
                     icon={
                       <LinuxDoIcon
@@ -607,8 +607,8 @@ const LoginForm = () => {
                   status.custom_oauth_providers.map((provider) => (
                     <Button
                       key={provider.slug}
-                      theme='outline'
-                      className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                      theme='light'
+                      className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
                       type='tertiary'
                       icon={getOAuthProviderIcon(provider.icon || '', 20)}
                       onClick={() => handleCustomOAuthClick(provider)}
@@ -631,8 +631,8 @@ const LoginForm = () => {
 
                 {status.passkey_login && passkeySupported && (
                   <Button
-                    theme='outline'
-                    className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors'
+                    theme='light'
+                    className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 transition-all duration-200'
                     type='tertiary'
                     icon={<IconKey size='large' />}
                     onClick={handlePasskeyLogin}
@@ -649,7 +649,7 @@ const LoginForm = () => {
                 <Button
                   theme='solid'
                   type='primary'
-                  className='w-full h-12 flex items-center justify-center bg-black text-white !rounded-full hover:bg-gray-800 transition-colors'
+                  className='w-full h-12 flex items-center justify-center !rounded-xl hover:opacity-90 transition-opacity'
                   icon={<IconMail size='large' />}
                   onClick={handleEmailLoginClick}
                   loading={emailLoginLoading}
@@ -725,18 +725,18 @@ const LoginForm = () => {
             <Title heading={3}>{systemName}</Title>
           </div>
 
-          <Card className='border-0 !rounded-2xl overflow-hidden'>
+          <Card className='border-0 !rounded-2xl overflow-hidden shadow-xl'>
             <div className='flex justify-center pt-6 pb-2'>
-              <Title heading={3} className='text-gray-800 dark:text-gray-200'>
+              <Title heading={3} className='text-semi-color-text-0 dark:text-gray-200'>
                 {t('登 录')}
               </Title>
             </div>
             <div className='px-2 py-8'>
               {status.passkey_login && passkeySupported && (
                 <Button
-                  theme='outline'
+                  theme='light'
+                  className='w-full h-12 flex items-center justify-center !rounded-xl border border-semi-color-border hover:border-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 transition-all duration-200 mb-4'
                   type='tertiary'
-                  className='w-full h-12 flex items-center justify-center !rounded-full border border-gray-200 hover:bg-gray-50 transition-colors mb-4'
                   icon={<IconKey size='large' />}
                   onClick={handlePasskeyLogin}
                   loading={passkeyLoading}
@@ -947,17 +947,25 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='relative overflow-hidden bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
-      {/* 背景模糊晕染球 */}
+    <div className='relative overflow-hidden min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
+      {/* 渐变背景 */}
+      <div className='absolute inset-0 bg-gradient-to-br from-semi-color-bg-0 via-semi-color-bg-1 to-semi-color-bg-2' />
+      
+      {/* 背景模糊晕染球 - 科技蓝紫色调 */}
       <div
         className='blur-ball blur-ball-indigo'
-        style={{ top: '-80px', right: '-80px', transform: 'none' }}
+        style={{ top: '-80px', right: '-80px', transform: 'none', opacity: 0.6 }}
       />
       <div
         className='blur-ball blur-ball-teal'
-        style={{ top: '50%', left: '-120px' }}
+        style={{ top: '50%', left: '-120px', opacity: 0.5 }}
       />
-      <div className='w-full max-w-sm mt-[60px]'>
+      
+      {/* 额外的渐变光晕 */}
+      <div className='absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full opacity-10 blur-3xl' />
+      <div className='absolute bottom-1/4 left-1/4 w-80 h-80 bg-purple-500 rounded-full opacity-10 blur-3xl' />
+      
+      <div className='w-full max-w-sm mt-[60px] relative z-10'>
         {showEmailLogin ||
         !hasOAuthLoginOptions
           ? renderEmailLoginForm()
