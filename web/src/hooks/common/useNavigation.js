@@ -35,7 +35,7 @@ export const useNavigation = (t, docsLink, headerNavModules) => {
 
     const allLinks = [
       {
-        text: t('首页'),
+        text: t('首页1'),
         itemKey: 'home',
         to: '/',
       },
